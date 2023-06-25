@@ -4,13 +4,16 @@ spring:
   cloud:
     nacos:
       config:
-        file-extension: yaml # 配置内容的数据格式
+        file-extension: yml # 配置内容的数据格式
         group: DEFAULT_GROUP # 组，默认为 DEFAULT_GROUP
+        namespace: 5610deee-f0fa-47e9-a44c-366ab6bf7d56
+        prefix: liberty-demo # 表示读取哪个配置文件？不写时默认使用${spring.application.name}
         server-addr: 192.168.1.150:8848 # 注册中心地址
         enabled: true
-        namespace: dev
       discovery:
         server-addr: 192.168.1.150:8848 # 注册中心地址
+        namespace: 5610deee-f0fa-47e9-a44c-366ab6bf7d56
+
 
   profiles:
     active: dev
